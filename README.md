@@ -1,25 +1,39 @@
 # 6DOF RSS Manipulator Dynamics Calculator
 
-Welcome to the repository dedicated to real-time dynamics computation for a 6DOF RSS (Rotational Spherical Spherical) Manipulator! This project is born out of the need to handle complex robotic dynamics swiftly, leveraging symbolic computation.
+This project aims to efficiently compute the dynamics of a 6 degree-of-freedom (DOF) Revolute-Spherical-Spherical (RSS) robotic manipulator in real-time. Computing manipulator dynamics, which involve Jacobian matrices, is computationally intensive. This project leverages symbolic mathematics to simplify the Jacobian expressions upfront, enabling fast real-time dynamics calculations.
 
-## Introduction
+## Background
 
-Imagine controlling a sophisticated robotic arm with six degrees of freedom, performing intricate tasks with precision and speed. To achieve this, we need to solve the manipulator’s dynamics efficiently. This project simplifies and solves the symbolic Jacobian matrices, which are critical yet computationally intensive components.
+Controlling a sophisticated 6DOF robotic arm performing complex tasks requires solving its dynamics swiftly. However, computing Jacobian matrices symbolically is challenging due to their large size and complexity. This project uses GiNaC, a C++ symbolic manipulation library, to simplify the Jacobian expressions derived from the manipulator's kinematic model.
 
-## Overview
+## Getting Started
 
-Here's the journey:
+1. Provide the manipulator's kinematic model (links, joints etc.) as MATLAB code.
 
-1. **User Input**: Start with your MATLAB code detailing the manipulator’s structure, including its base, top, and inverse kinematics.
-2. **Conversion**: We manually convert this MATLAB code into C++ code compatible with GiNaC, a powerful library for symbolic mathematics. [Learn more about GiNaC](https://www.ginac.de/)
-3. **Simplification**: GiNaC helps in simplifying the complex symbolic expressions, making the subsequent real-time computations much faster.
-4. **Dynamics Calculation**: Once simplified, the Jacobian matrices are computed and solved quickly, with results saved to `output.txt`.
+2. The MATLAB code is manually converted to C++ compatible with GiNaC. 
 
-## Behind the Scenes
+3. GiNaC is used to simplify the symbolic expressions for the Jacobians.
 
-This project is a collaborative effort. The mathematical research and MATLAB kinematics were provided by Himanshu Varshney, a PhD student at ISM Dhanbad’s Robotics Lab. The GiNaC implementation and C++ coding were done by me.
+4. Real-time dynamics calculation uses the simplified expressions. Results are saved to output.txt.
 
-## Connect with Us
+## Technology
 
-- **Himanshu Varshney**: [LinkedIn](https://www.linkedin.com/in/himanshu-varshney/)
-- **[Karan Pratap Shaw](https://www.linkedin.com/in/karanpratapshaw/) & [Santanu Basu Ray](https://www.linkedin.com/in/santanu-basu-ray/)**: Feel free to contribute to the repository or reach out with suggestions and improvements.
+- GiNaC: Powerful symbolic expression manipulation and simplification.
+- C++: Language for implementing kinematics/dynamics algorithms and GiNaC integration.
+
+## Contributors
+
+- [Himanshu Varshney](https://www.linkedin.com/in/himanshu-varshney/) (Senior Research Fellow @ ISM Dhanbad): Provided manipulator kinematic and dynamic model and code and MATLAB code. The credits to the research and mathematics of this project goes directly to him
+- Karan Pratap Shaw: Implemented GiNaC integration and C++ code.
+
+## Usage
+
+Build the C++ code and provide input parameters to compute real-time dynamics values. Contact maintainers for guidance.
+
+## Future Work
+
+- Implement MATLAB to C++/GiNaC converter.  
+- Optimize real-time dynamics computation further.
+- Expand to different manipulator architectures.
+
+Let me know if any part of the README needs more clarification or expansion. The goal is to provide a high-level overview of the project for new visitors.
