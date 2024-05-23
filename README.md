@@ -58,4 +58,4 @@ Only the GiNaC implementation was done by me
 
 ### License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the GNU Lesser General Public License v2.1. See the LICENSE file for more details.
